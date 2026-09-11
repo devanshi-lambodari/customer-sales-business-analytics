@@ -1,9 +1,8 @@
 CREATE DATABASE business_analytics;
 USE business_analytics;
 
--- =========================
--- CUSTOMERS
--- =========================
+
+-- CUSTOMERS TABLE Creation 
 
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
@@ -12,6 +11,8 @@ CREATE TABLE customers (
     age INT,
     segment VARCHAR(30)
 );
+
+-- cuatomer  Data Insert
 
 INSERT INTO customers VALUES
 (1, 'Aarav Sharma', 'Mumbai', 24, 'Young Professional'),
@@ -25,9 +26,8 @@ INSERT INTO customers VALUES
 (9, 'Vikram Singh', 'Mumbai', 46, 'Established'),
 (10, 'Neha Gupta', 'Pune', 34, 'Professional');
 
--- =========================
--- PRODUCTS
--- =========================
+
+-- PRODUCTS Table
 
 CREATE TABLE products (
     product_id INT PRIMARY KEY,
@@ -35,6 +35,8 @@ CREATE TABLE products (
     category VARCHAR(50),
     price DECIMAL(10,2)
 );
+
+-- Product data insert
 
 INSERT INTO products VALUES
 (101, 'Laptop', 'Electronics', 65000),
@@ -46,9 +48,8 @@ INSERT INTO products VALUES
 (107, 'Keyboard', 'Accessories', 3000),
 (108, 'Mouse', 'Accessories', 1500);
 
--- =========================
--- ORDERS
--- =========================
+
+-- ORDERS table
 
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
@@ -59,6 +60,8 @@ CREATE TABLE orders (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
+-- ORDERS data
 
 INSERT INTO orders VALUES
 (1001, 1, 101, '2026-01-05', 1),
